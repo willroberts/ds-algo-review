@@ -1,4 +1,4 @@
-package fnv1
+package fnv1hash
 
 import "testing"
 
