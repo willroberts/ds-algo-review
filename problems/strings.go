@@ -5,6 +5,8 @@ import (
 	"strconv"
 )
 
+// Strings_IsUnique returns 'true' if the given string has no repeated characters.
+// Time Complexity: O(n) worst case.
 func Strings_IsUnique(s string) bool {
 	seen := make(map[rune]struct{})
 	for _, c := range s {
@@ -16,6 +18,8 @@ func Strings_IsUnique(s string) bool {
 	return true
 }
 
+// Strings_CheckPermutation returns 'true' if the given strings contain the same characters.
+// Time Complexity: O(n).
 func Strings_CheckPermutation(a, b string) bool {
 	aChars := make(map[rune]int)
 	for _, c := range a {
@@ -28,6 +32,8 @@ func Strings_CheckPermutation(a, b string) bool {
 	return reflect.DeepEqual(aChars, bChars)
 }
 
+// Strings_URLify replaces whitespace with "%20".
+// Time Complexity: O(n).
 func Strings_URLify(s string) string {
 	result := make([]rune, 0)
 	for _, r := range s {
@@ -42,7 +48,8 @@ func Strings_URLify(s string) string {
 	return string(result)
 }
 
-// Checks if a is "one edit away" from b by counting differences.
+// Strings_OneAway checks if a is "one edit away" from b by counting differences.
+// Time Complexity: O(n).
 func Strings_OneAway(a, b string) bool {
 	lenA := len(a)
 	lenB := len(b)
@@ -87,6 +94,8 @@ func oneAwayInsertedOrDeleted(long, short string) bool {
 	return true
 }
 
+// Strings_StringCompression condenses strings by replacing repeated characters with numeric counts.
+// Time Complexity: O(n).
 func Strings_StringCompression(s string) string {
 	compressed := make([]rune, 0)
 	last := '�'
