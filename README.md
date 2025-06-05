@@ -4,19 +4,19 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 
 ## Concepts to Cover
 
-[ ] Linked Lists
-[ ] Trees, Tries, & Graphs
-[ ] Stacks & Queues
-[ ] Heaps
-[ ] Vectors / ArrayLists
-[x] Hash Tables
-[ ] Breadth-First Search
-[ ] Depth-First Search
-[ ] Binary Search
-[ ] Merge Sort
-[ ] Quick Sort
-[ ] Bit Manipulation
-[ ] Memory (Stack vs. Heap)
-[ ] Recursion
-[ ] Dynamic Programming
-[ ] Big OTime & Space
+- [ ] Linked Lists
+- [ ] Trees, Tries, & Graphs
+- [ ] Stacks & Queues
+- [ ] Heaps
+- [ ] Vectors / ArrayLists
+- [x] Hash Tables
+- [ ] Breadth-First Search
+- [ ] Depth-First Search
+- [ ] Binary Search
+- [ ] Merge Sort
+- [ ] Quick Sort
+- [ ] Bit Manipulation
+- [ ] Memory (Stack vs. Heap)
+- [ ] Recursion
+- [ ] Dynamic Programming
+- [ ] Big OTime & Space
