@@ -16,7 +16,7 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 - [ ] Merge Sort
 - [ ] Quick Sort
 - [ ] Bit Manipulation
-- [ ] Memory (Stack vs. Heap)
+- [x] Memory (Stack vs. Heap)
 - [ ] Recursion
 - [ ] Dynamic Programming
 - [x] Big OTime & Space
