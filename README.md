@@ -4,7 +4,7 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 
 ## Concepts to Cover
 
-- [ ] Linked Lists
+- [x] Linked Lists
 - [ ] Trees, Tries, & Graphs
 - [ ] Stacks & Queues
 - [ ] Heaps
@@ -19,4 +19,4 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 - [ ] Memory (Stack vs. Heap)
 - [ ] Recursion
 - [ ] Dynamic Programming
-- [ ] Big OTime & Space
+- [x] Big OTime & Space
