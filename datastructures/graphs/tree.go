@@ -22,45 +22,68 @@ func (n *Node) IsLeaf() bool {
 	return len(n.children) == 0
 }
 
+//
+
 type BinaryTree struct {
-	root *BinaryNode
+	root *binaryNode
 }
 
-type BinaryNode struct {
+type BinaryNode interface {
+	Value() any
+	Left() *binaryNode
+	Right() *binaryNode
+}
+
+type binaryNode struct {
 	value any
-	left  *BinaryNode
-	right *BinaryNode
+	left  *binaryNode
+	right *binaryNode
 }
 
-func (n *BinaryNode) IsLeaf() bool {
+func (n *binaryNode) Value() any {
+	return n.value
+}
+
+func (n *binaryNode) Left() *binaryNode {
+	return n.left
+}
+
+func (n *binaryNode) Right() *binaryNode {
+	return n.right
+}
+
+func (n *binaryNode) IsLeaf() bool {
 	return n.left == nil && n.right == nil
 }
 
-// TODO: Use interface to allow these operations to apply to any binary tree type.
+//
 
 // TraverseInOrder yields values from left nodes before current and right nodes.
-func TraverseInOrder(n *BinaryNode, valuesCh chan any) {
-	if n != nil {
-		TraverseInOrder(n.left, valuesCh)
-		valuesCh <- n.value
-		TraverseInOrder(n.right, valuesCh)
+func TraverseInOrder(n *binaryNode, valuesCh chan any) {
+	if n == nil {
+		return
 	}
+	TraverseInOrder(n.Left(), valuesCh)
+	valuesCh <- n.Value()
+	TraverseInOrder(n.Right(), valuesCh)
 }
 
 // TraversePreOrder yields values from current node before left and right nodes.
-func TraversePreOrder(n *BinaryNode, valuesCh chan any) {
-	if n != nil {
-		valuesCh <- n.value
-		TraverseInOrder(n.left, valuesCh)
-		TraverseInOrder(n.right, valuesCh)
+func TraversePreOrder(n *binaryNode, valuesCh chan any) {
+	if n == nil {
+		return
 	}
+	valuesCh <- n.Value()
+	TraverseInOrder(n.Left(), valuesCh)
+	TraverseInOrder(n.Right(), valuesCh)
 }
 
 // TraversePostOrder yields values from left and right nodes before current node.
-func TraversePostOrder(n *BinaryNode, valuesCh chan any) {
-	if n != nil {
-		TraverseInOrder(n.left, valuesCh)
-		TraverseInOrder(n.right, valuesCh)
-		valuesCh <- n.value
+func TraversePostOrder(n *binaryNode, valuesCh chan any) {
+	if n == nil {
+		return
 	}
+	TraverseInOrder(n.Left(), valuesCh)
+	TraverseInOrder(n.Right(), valuesCh)
+	valuesCh <- n.Value()
 }

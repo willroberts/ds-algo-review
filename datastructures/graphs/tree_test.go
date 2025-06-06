@@ -16,10 +16,10 @@ func TestTree(t *testing.T) {
 
 func TestTraverseInOrder(t *testing.T) {
 	tree := BinaryTree{
-		root: &BinaryNode{
+		root: &binaryNode{
 			value: 8,
-			left:  &BinaryNode{value: 4, left: &BinaryNode{value: 2}, right: &BinaryNode{value: 6}},
-			right: &BinaryNode{value: 12, left: &BinaryNode{value: 10}, right: &BinaryNode{value: 14}},
+			left:  &binaryNode{value: 4, left: &binaryNode{value: 2}, right: &binaryNode{value: 6}},
+			right: &binaryNode{value: 12, left: &binaryNode{value: 10}, right: &binaryNode{value: 14}},
 		},
 	}
 	valuesCh := make(chan any, 7)
@@ -35,10 +35,10 @@ func TestTraverseInOrder(t *testing.T) {
 
 func TestTraversePreOrder(t *testing.T) {
 	tree := BinaryTree{
-		root: &BinaryNode{
+		root: &binaryNode{
 			value: 2,
-			left:  &BinaryNode{value: 6, left: &BinaryNode{value: 4}, right: &BinaryNode{value: 8}},
-			right: &BinaryNode{value: 12, left: &BinaryNode{value: 10}, right: &BinaryNode{value: 14}},
+			left:  &binaryNode{value: 6, left: &binaryNode{value: 4}, right: &binaryNode{value: 8}},
+			right: &binaryNode{value: 12, left: &binaryNode{value: 10}, right: &binaryNode{value: 14}},
 		},
 	}
 	valuesCh := make(chan any, 7)
@@ -54,10 +54,10 @@ func TestTraversePreOrder(t *testing.T) {
 
 func TestTraversePostOrder(t *testing.T) {
 	tree := BinaryTree{
-		root: &BinaryNode{
+		root: &binaryNode{
 			value: 14,
-			left:  &BinaryNode{value: 4, left: &BinaryNode{value: 2}, right: &BinaryNode{value: 6}},
-			right: &BinaryNode{value: 10, left: &BinaryNode{value: 8}, right: &BinaryNode{value: 12}},
+			left:  &binaryNode{value: 4, left: &binaryNode{value: 2}, right: &binaryNode{value: 6}},
+			right: &binaryNode{value: 10, left: &binaryNode{value: 8}, right: &binaryNode{value: 12}},
 		},
 	}
 	valuesCh := make(chan any, 7)

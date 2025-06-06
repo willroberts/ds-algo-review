@@ -13,9 +13,20 @@ type MinHeapNode struct {
 	right *MinHeapNode
 }
 
+func (n *MinHeapNode) Value() any {
+	return n.value
+}
+
+func (n *MinHeapNode) Left() *MinHeapNode {
+	return n.left
+}
+
+func (n *MinHeapNode) Right() *MinHeapNode {
+	return n.right
+}
+
 // Insert places the given element at the bottom of the tree before calling Fix().
 func (h *MinHeap) Insert(v int) {
-
 	h.Fix()
 }
 
