@@ -36,6 +36,8 @@ func (n *BinaryNode) IsLeaf() bool {
 	return n.left == nil && n.right == nil
 }
 
+// TODO: Use interface to allow these operations to apply to any binary tree type.
+
 // TraverseInOrder yields values from left nodes before current and right nodes.
 func TraverseInOrder(n *BinaryNode, valuesCh chan any) {
 	if n != nil {
