@@ -1,4 +1,4 @@
-package graphs
+package tree
 
 // Binary Search Tree: Smaller values always to the left, greater always to the right.
 // - Exception: Duplicate values: duplicates can be either left or right aligned, must be specified.
