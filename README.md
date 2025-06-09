@@ -5,7 +5,7 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 ## Concepts Covered
 
 - [x] Linked Lists
-- [ ] Trees, Tries, & Graphs
+- [x] Trees, Tries, & Graphs
 - [ ] Stacks & Queues
 - [x] Heaps
 - [x] Vectors / ArrayLists
