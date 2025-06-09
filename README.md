@@ -2,12 +2,12 @@
 
 Examples of data structures, algorithms, and interview problems from 'Cracking the Coding Interview'.
 
-## Concepts to Cover
+## Concepts Covered
 
 - [x] Linked Lists
 - [ ] Trees, Tries, & Graphs
 - [ ] Stacks & Queues
-- [ ] Heaps
+- [x] Heaps
 - [ ] Vectors / ArrayLists
 - [x] Hash Tables
 - [ ] Breadth-First Search
