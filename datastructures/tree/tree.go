@@ -46,9 +46,9 @@ func (n *BinaryNode) TraverseInOrder(valuesCh chan any) {
 	if n == nil {
 		return
 	}
-	TraverseInOrder(n.left, valuesCh)
+	n.left.TraverseInOrder(valuesCh)
 	valuesCh <- n.value
-	TraverseInOrder(n.right, valuesCh)
+	n.right.TraverseInOrder(valuesCh)
 }
 
 // TraversePreOrder yields values from current node before left and right nodes.
@@ -57,8 +57,8 @@ func (n *BinaryNode) TraversePreOrder(valuesCh chan any) {
 		return
 	}
 	valuesCh <- n.value
-	TraverseInOrder(n.left, valuesCh)
-	TraverseInOrder(n.right, valuesCh)
+	n.left.TraverseInOrder(valuesCh)
+	n.right.TraverseInOrder(valuesCh)
 }
 
 // TraversePostOrder yields values from left and right nodes before current node.
@@ -66,7 +66,7 @@ func (n *BinaryNode) TraversePostOrder(valuesCh chan any) {
 	if n == nil {
 		return
 	}
-	TraverseInOrder(n.left, valuesCh)
-	TraverseInOrder(n.right, valuesCh)
+	n.left.TraverseInOrder(valuesCh)
+	n.right.TraverseInOrder(valuesCh)
 	valuesCh <- n.value
 }
