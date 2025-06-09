@@ -23,7 +23,7 @@ func TestTraverseInOrder(t *testing.T) {
 		},
 	}
 	valuesCh := make(chan any, 7)
-	TraverseInOrder(tree.root, valuesCh)
+	tree.root.TraverseInOrder(valuesCh)
 	for i := 1; i <= 7; i++ {
 		v := <-valuesCh
 		if v != i*2 {
@@ -42,7 +42,7 @@ func TestTraversePreOrder(t *testing.T) {
 		},
 	}
 	valuesCh := make(chan any, 7)
-	TraversePreOrder(tree.root, valuesCh)
+	tree.root.TraversePreOrder(valuesCh)
 	for i := 1; i <= 7; i++ {
 		v := <-valuesCh
 		if v != i*2 {
@@ -61,7 +61,7 @@ func TestTraversePostOrder(t *testing.T) {
 		},
 	}
 	valuesCh := make(chan any, 7)
-	TraversePostOrder(tree.root, valuesCh)
+	tree.root.TraversePostOrder(valuesCh)
 	for i := 1; i <= 7; i++ {
 		v := <-valuesCh
 		if v != i*2 {
