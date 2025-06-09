@@ -2,6 +2,8 @@ package graphs
 
 import "errors"
 
+var ErrHeapIsEmpty = errors.New("heap is empty")
+
 // MinHeap is a complete binary tree where each node is smaller than its children.
 // Can be used to implement a priority queue.
 // For this implementation, our internal data structure is a slice, instead of using
@@ -23,8 +25,16 @@ func (h *MinHeap) GetParent(i int) (int, error) {
 	return (i - 2) / 2, nil
 }
 
+func (h *MinHeap) HasLeftChild(i int) bool {
+	return h.GetLeftChild(i) < len(h.items)
+}
+
 func (h *MinHeap) GetLeftChild(i int) int {
 	return i*2 + 1
+}
+
+func (h *MinHeap) HasRightChild(i int) bool {
+	return h.GetRightChild(i) < len(h.items)
 }
 
 func (h *MinHeap) GetRightChild(i int) int {
@@ -34,7 +44,7 @@ func (h *MinHeap) GetRightChild(i int) int {
 // Peek returns the first element in the heap.
 func (h *MinHeap) Peek() (int, error) {
 	if len(h.items) == 0 {
-		return 0, errors.New("heap is empty")
+		return 0, ErrHeapIsEmpty
 	}
 	return h.items[0], nil
 }
@@ -58,7 +68,7 @@ func (h *MinHeap) Insert(i int) {
 // ExtractMin removes the minimum element from the heap and rebalances the tree.
 func (h *MinHeap) ExtractMin() (int, error) {
 	if len(h.items) == 0 {
-		return 0, errors.New("heap is empty")
+		return 0, ErrHeapIsEmpty
 	}
 	v := h.items[0]
 	// Move the last element to the root and shrink the heap.
@@ -69,9 +79,9 @@ func (h *MinHeap) ExtractMin() (int, error) {
 	return v, nil
 }
 
-func (h *MinHeap) heapifyUp() error {
+func (h *MinHeap) heapifyUp() {
 	if len(h.items) == 0 {
-		return errors.New("heap is empty")
+		return
 	}
 	i := len(h.items) - 1
 	for {
@@ -86,9 +96,25 @@ func (h *MinHeap) heapifyUp() error {
 			break
 		}
 	}
-	return nil
 }
 
 func (h *MinHeap) heapifyDown() {
-
+	if len(h.items) == 0 {
+		return
+	}
+	i := 0
+	for {
+		if !h.HasLeftChild(i) {
+			break
+		}
+		smaller := h.GetLeftChild(i)
+		if h.HasRightChild(i) && h.items[h.GetRightChild(i)] < h.items[h.GetLeftChild(i)] {
+			smaller = h.GetRightChild(i)
+		}
+		if h.items[i] < h.items[smaller] {
+			break
+		}
+		h.SwapValues(i, smaller)
+		i = smaller
+	}
 }

@@ -48,3 +48,25 @@ func TestMinHeap_Insert(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestMinHeap_ExtractMin(t *testing.T) {
+	h := &MinHeap{items: make([]int, 0)}
+	h.Insert(10)
+	h.Insert(20)
+	h.Insert(30)
+	h.Insert(40)
+	v, err := h.ExtractMin()
+	if err != nil {
+		t.Log(err)
+		t.Fail()
+	}
+	if v != 10 {
+		t.Log("expected 10, got", v)
+		t.Fail()
+	}
+	expected := []int{20, 40, 30}
+	if !reflect.DeepEqual(h.items, expected) {
+		t.Log("expected", expected, "got", h.items)
+		t.Fail()
+	}
+}
