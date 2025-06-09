@@ -8,7 +8,7 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 - [ ] Trees, Tries, & Graphs
 - [ ] Stacks & Queues
 - [x] Heaps
-- [ ] Vectors / ArrayLists
+- [x] Vectors / ArrayLists
 - [x] Hash Tables
 - [ ] Breadth-First Search
 - [ ] Depth-First Search
