@@ -1,6 +1,8 @@
 package quicksort
 
 // QuickSort sorts the given array by rotating values around a pivot point, with O(n log n) performance.
+// Note that Go's slices.Sort method uses a pattern-defeating QuickSort (pdqsort) algorithm internally.
+// pdqsort combines the fast average case of QuickSort with the fast worst case of heapsort.
 func QuickSort(array []int) {
 	quickSortRange(array, 0, len(array)-1)
 }
