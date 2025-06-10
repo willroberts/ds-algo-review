@@ -13,7 +13,7 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 - [x] Breadth-First Search
 - [x] Depth-First Search
 - [x] Binary Search
-- [ ] Merge Sort
+- [x] Merge Sort
 - [ ] Quick Sort
 - [ ] Bubble Sort
 - [ ] Bit Manipulation
