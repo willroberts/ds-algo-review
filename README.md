@@ -21,5 +21,5 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 - [x] Bit Manipulation
 - [x] Memory (Stack vs. Heap)
 - [x] Recursion
-- [ ] Dynamic Programming
+- [x] Memoization
 - [x] Big OTime & Space
