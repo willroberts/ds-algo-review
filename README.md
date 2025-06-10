@@ -1,25 +1,24 @@
 # Data Structure & Algorithm Review
 
-Examples of data structures, algorithms, and interview problems from 'Cracking the Coding Interview'.
+Examples of data structures and algorithms commonly found in software interviews.
 
 ## Concepts Covered
 
-- [x] Linked Lists
-- [x] Trees, Tries, & Graphs
-- [x] Stacks & Queues
-- [x] Heaps
-- [x] Vectors / ArrayLists
-- [x] Hash Tables
-- [x] Breadth-First Search
-- [x] Depth-First Search
-- [x] Binary Search
-- [x] Merge Sort
-- [x] Quick Sort
-- [x] Bubble Sort
-- [x] Heap Sort
-- [ ] PDQSort
-- [x] Bit Manipulation
-- [x] Memory (Stack vs. Heap)
-- [x] Recursion
-- [x] Memoization
-- [x] Big OTime & Space
+- Linked Lists
+- Trees, Tries, & Graphs
+- Stacks & Queues
+- Heaps
+- Vectors / ArrayLists
+- Hash Tables
+- Breadth-First Search
+- Depth-First Search
+- Binary Search
+- Merge Sort
+- Quick Sort
+- Bubble Sort
+- Heap Sort
+- Bit Manipulation
+- Memory (Stack vs. Heap)
+- Recursion
+- Memoization
+- Big OTime & Space
