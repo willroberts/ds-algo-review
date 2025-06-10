@@ -38,16 +38,10 @@ func (ht *HashTable) Get(key string) (string, error) {
 	if node == nil {
 		return "", errors.New("list does not exist")
 	}
-
-	for {
-		if node.Next() == nil {
-			break
+	for e := node; e != nil; e = e.Next() {
+		if e.Value == key {
+			return e.Next().Value.(string), nil
 		}
-		if node.Value == key {
-			return node.Next().Value.(string), nil
-		}
-		node = node.Next()
 	}
-
 	return "", errors.New("value not found")
 }
