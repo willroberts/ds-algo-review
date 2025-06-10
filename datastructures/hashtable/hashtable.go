@@ -4,7 +4,7 @@ import (
 	"container/list"
 	"errors"
 
-	"github.com/willroberts/ds-algo-review/algorithms/fnv1hash"
+	"github.com/willroberts/ds-algo-review/algorithms/hash/fnv1"
 )
 
 type HashTable struct {
@@ -20,7 +20,7 @@ func NewHashTable(size uint64) *HashTable {
 }
 
 func (ht *HashTable) Insert(key string, value string) {
-	hash := fnv1hash.FNV1([]byte(key))
+	hash := fnv1.FNV1([]byte(key))
 	mapped := hash % ht.size
 	if ht.table[mapped] == nil {
 		ht.table[mapped] = list.New()
@@ -31,7 +31,7 @@ func (ht *HashTable) Insert(key string, value string) {
 }
 
 func (ht *HashTable) Get(key string) (string, error) {
-	hash := fnv1hash.FNV1([]byte(key))
+	hash := fnv1.FNV1([]byte(key))
 	mapped := hash % ht.size
 	list := ht.table[mapped]
 	node := list.Front()

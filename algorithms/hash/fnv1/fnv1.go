@@ -1,4 +1,4 @@
-package fnv1a
+package fnv1
 
 const FNV_OFFSET_BASIS uint64 = 14695981039346656037
 const FNV_PRIME uint64 = 1099511628211
