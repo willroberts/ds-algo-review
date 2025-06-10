@@ -10,8 +10,8 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 - [x] Heaps
 - [x] Vectors / ArrayLists
 - [x] Hash Tables
-- [ ] Breadth-First Search
-- [ ] Depth-First Search
+- [x] Breadth-First Search
+- [x] Depth-First Search
 - [ ] Binary Search
 - [ ] Merge Sort
 - [ ] Quick Sort
