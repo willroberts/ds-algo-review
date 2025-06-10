@@ -16,6 +16,8 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 - [x] Merge Sort
 - [ ] Quick Sort
 - [ ] Bubble Sort
+- [ ] Heap Sort
+- [ ] PDQSort
 - [ ] Bit Manipulation
 - [x] Memory (Stack vs. Heap)
 - [x] Recursion
