@@ -80,26 +80,23 @@ func (h *MinHeap) ExtractMin() (int, error) {
 }
 
 func (h *MinHeap) heapifyUp() {
-	if len(h.items) == 0 {
+	if len(h.items) <= 1 {
 		return
 	}
 	i := len(h.items) - 1
 	for {
-		if i == 0 {
-			break
-		}
 		parent, _ := h.GetParent(i)
 		if i > 0 && h.items[parent] > h.items[i] {
 			h.SwapValues(parent, i)
 			i = parent
-		} else {
-			break
+			continue
 		}
+		break
 	}
 }
 
 func (h *MinHeap) heapifyDown() {
-	if len(h.items) == 0 {
+	if len(h.items) <= 1 {
 		return
 	}
 	i := 0
