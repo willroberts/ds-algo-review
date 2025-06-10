@@ -14,7 +14,7 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 - [x] Depth-First Search
 - [x] Binary Search
 - [x] Merge Sort
-- [ ] Quick Sort
+- [x] Quick Sort
 - [ ] Bubble Sort
 - [ ] Heap Sort
 - [ ] PDQSort
