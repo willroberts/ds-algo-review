@@ -5,10 +5,14 @@ Examples of data structures and algorithms commonly found in software interviews
 ## Concepts Covered
 
 - Linked Lists
-- Trees, Tries, & Graphs
-- Stacks & Queues
+- Graphs
+- Trees
+- Tries
+- Stacks
+- Queues
 - Heaps
-- Vectors / ArrayLists
+- Vectors
+- ArrayLists
 - Hash Tables
 - Breadth-First Search
 - Depth-First Search
@@ -18,7 +22,7 @@ Examples of data structures and algorithms commonly found in software interviews
 - Bubble Sort
 - Heap Sort
 - Bit Manipulation
-- Memory (Stack vs. Heap)
+- Stack & Heap Allocations
 - Recursion
 - Memoization
-- Big OTime & Space
+- Big O Time/Space Complexity
