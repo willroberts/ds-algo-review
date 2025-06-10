@@ -6,7 +6,7 @@ Examples of data structures, algorithms, and interview problems from 'Cracking t
 
 - [x] Linked Lists
 - [x] Trees, Tries, & Graphs
-- [ ] Stacks & Queues
+- [x] Stacks & Queues
 - [x] Heaps
 - [x] Vectors / ArrayLists
 - [x] Hash Tables
