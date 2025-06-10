@@ -1,8 +1,6 @@
-package bfs
+package dfs
 
-import (
-	"github.com/willroberts/ds-algo-review/datastructures/graph"
-)
+import "github.com/willroberts/ds-algo-review/datastructures/graph"
 
 // DepthFirstSearch searches a Graph structure's edges recursively.
 // Returns 'true' when a path exists between the given nodes.
