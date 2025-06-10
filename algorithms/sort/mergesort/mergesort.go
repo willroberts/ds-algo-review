@@ -5,20 +5,20 @@ func MergeSort(array []int) {
 	mergeSortRange(array, make([]int, len(array)), 0, len(array)-1)
 }
 
-func mergeSortRange(array []int, tmp []int, leftStart int, rightEnd int) {
-	if leftStart >= rightEnd {
+func mergeSortRange(array []int, tmp []int, start int, end int) {
+	if start >= end {
 		return
 	}
-	mid := (leftStart + rightEnd) / 2
-	mergeSortRange(array, tmp, leftStart, mid)
-	mergeSortRange(array, tmp, mid+1, rightEnd)
-	mergeHalves(array, tmp, leftStart, rightEnd)
+	mid := (start + end) / 2
+	mergeSortRange(array, tmp, start, mid)
+	mergeSortRange(array, tmp, mid+1, end)
+	mergeHalves(array, tmp, start, end)
 }
 
 func mergeHalves(array []int, tmp []int, leftStart int, rightEnd int) {
 	leftEnd := (leftStart + rightEnd) / 2
 	rightStart := leftEnd + 1
-	size := rightEnd - leftStart + 1 // Number of elements to be copied.
+	size := rightEnd - leftStart + 1 // Number of elements to be copied in this iteration.
 
 	left := leftStart
 	right := rightStart
