@@ -10,6 +10,10 @@ type MaxHeap struct {
 	items []int
 }
 
+func (h *MaxHeap) Size() int {
+	return len(h.items)
+}
+
 func (h *MaxHeap) GetParent(i int) (int, error) {
 	if i == 0 {
 		return 0, ErrNoRootParent
@@ -55,7 +59,7 @@ func (h *MaxHeap) Insert(i int) {
 	h.heapifyUp()
 }
 
-// ExtractMin removes the maximum element from the heap and rebalances the tree.
+// ExtractMax removes the maximum element from the heap and rebalances the tree.
 func (h *MaxHeap) ExtractMax() (int, error) {
 	if len(h.items) == 0 {
 		return 0, ErrHeapIsEmpty
