@@ -31,6 +31,10 @@ type GraphNode struct {
 	adjacent *list.List
 }
 
+func (n *GraphNode) ID() int {
+	return n.id
+}
+
 func (n *GraphNode) MarkAdjacent(node *GraphNode) {
 	n.adjacent.PushBack(node)
 }
