@@ -10,10 +10,12 @@ type MaxHeap struct {
 	items []int
 }
 
+// Size returns the number of items in the MaxHeap.
 func (h *MaxHeap) Size() int {
 	return len(h.items)
 }
 
+// GetParent returns the parent index of the given node index.
 func (h *MaxHeap) GetParent(i int) (int, error) {
 	if i == 0 {
 		return 0, ErrNoRootParent
@@ -25,18 +27,22 @@ func (h *MaxHeap) GetParent(i int) (int, error) {
 	return (i - 2) / 2, nil
 }
 
+// HasLeftChild returns 'true' when the given node index has a left child in the MaxHeap.
 func (h *MaxHeap) HasLeftChild(i int) bool {
 	return h.GetLeftChild(i) < len(h.items)
 }
 
+// GetLeftChild returns the left child index of the given node index.
 func (h *MaxHeap) GetLeftChild(i int) int {
 	return i*2 + 1
 }
 
+// HasRightChild returns 'true' when the given node index has a right child in the MaxHeap.
 func (h *MaxHeap) HasRightChild(i int) bool {
 	return h.GetRightChild(i) < len(h.items)
 }
 
+// GetRightChild returns the right child index of the given node index.
 func (h *MaxHeap) GetRightChild(i int) int {
 	return i*2 + 2
 }
@@ -49,17 +55,18 @@ func (h *MaxHeap) Peek() (int, error) {
 	return h.items[0], nil
 }
 
+// Value returns the contained data of the given node index.
 func (h *MaxHeap) Value(i int) int {
 	return h.items[i]
 }
 
-// Insert places the given element at the bottom of the tree before calling Fix().
+// Insert places the given element at the bottom of the tree before re-heapifying.
 func (h *MaxHeap) Insert(i int) {
 	h.items = append(h.items, i)
 	h.heapifyUp()
 }
 
-// ExtractMax removes the maximum element from the heap and rebalances the tree.
+// ExtractMax removes the maximum element from the heap before re-heapifying.
 func (h *MaxHeap) ExtractMax() (int, error) {
 	if len(h.items) == 0 {
 		return 0, ErrHeapIsEmpty

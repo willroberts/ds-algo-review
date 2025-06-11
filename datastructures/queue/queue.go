@@ -2,51 +2,59 @@ package queue
 
 import "errors"
 
+var ErrQueueIsEmpty = errors.New("queue is empty")
+
 // Queue implements a FIFO linear data structure.
 type Queue struct {
-	front *QueueNode
-	back  *QueueNode
+	front *QueueItem
+	back  *QueueItem
 }
 
+// IsEmpty returns 'true' when there are no items in the Queue.
 func (q *Queue) IsEmpty() bool {
 	return q.front == nil
 }
 
+// Peek returns the first item in the Queue, or an error if the Queue is empty.
 func (q *Queue) Peek() (any, error) {
-	if q.front == nil {
-		return nil, errors.New("queue is empty; cannot peek")
+	if q.IsEmpty() {
+		return nil, ErrQueueIsEmpty
 	}
 	return q.front.value, nil
 }
 
+// Add inserts the given item into the Queue.
 func (q *Queue) Add(v any) {
-	node := NewQueueNode(v)
+	item := NewQueueItem(v)
 	if q.back != nil {
-		q.back.next = node
+		q.back.next = item
 	}
-	q.back = node
-	if q.front == nil {
-		q.front = node
+	q.back = item
+	if q.IsEmpty() {
+		q.front = item
 	}
 }
 
+// Remove returns the first item from the Queue, or an error if the Queue is empty.
 func (q *Queue) Remove() (any, error) {
-	if q.front == nil {
-		return nil, errors.New("queue is empty; cannot remove")
+	if q.IsEmpty() {
+		return nil, ErrQueueIsEmpty
 	}
 	v := q.front.value
 	q.front = q.front.next
-	if q.front == nil {
+	if q.IsEmpty() {
 		q.back = nil
 	}
 	return v, nil
 }
 
-type QueueNode struct {
+// QueueItem represents an item in the Queue. It contains a value, as well as a reference to the next item.
+type QueueItem struct {
 	value any
-	next  *QueueNode
+	next  *QueueItem
 }
 
-func NewQueueNode(v any) *QueueNode {
-	return &QueueNode{value: v}
+// NewQueueItem stores the given value in a QueueItem before returning its reference.
+func NewQueueItem(v any) *QueueItem {
+	return &QueueItem{value: v}
 }

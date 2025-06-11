@@ -20,7 +20,7 @@ type Node struct {
 	children []*Node
 }
 
-// IsLeaf determines if a node has no child nodes.
+// IsLeaf returns 'true' when a node has no child nodes.
 func (n *Node) IsLeaf() bool {
 	return len(n.children) == 0
 }
@@ -37,6 +37,7 @@ type BinaryNode struct {
 	right *BinaryNode
 }
 
+// IsLeaf returns 'true' when a node has no child nodes.
 func (n *BinaryNode) IsLeaf() bool {
 	return n.left == nil && n.right == nil
 }

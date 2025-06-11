@@ -10,6 +10,7 @@ type MinHeap struct {
 	items []int
 }
 
+// GetParent returns the parent index of the given node index.
 func (h *MinHeap) GetParent(i int) (int, error) {
 	if i == 0 {
 		return 0, ErrNoRootParent
@@ -21,18 +22,22 @@ func (h *MinHeap) GetParent(i int) (int, error) {
 	return (i - 2) / 2, nil
 }
 
+// HasLeftChild returns 'true' when the given node index has a left child in the MaxHeap.
 func (h *MinHeap) HasLeftChild(i int) bool {
 	return h.GetLeftChild(i) < len(h.items)
 }
 
+// GetLeftChild returns the left child index of the given node index.
 func (h *MinHeap) GetLeftChild(i int) int {
 	return i*2 + 1
 }
 
+// HasRightChild returns 'true' when the given node index has a right child in the MaxHeap.
 func (h *MinHeap) HasRightChild(i int) bool {
 	return h.GetRightChild(i) < len(h.items)
 }
 
+// GetRightChild returns the right child index of the given node index.
 func (h *MinHeap) GetRightChild(i int) int {
 	return i*2 + 2
 }
@@ -45,17 +50,18 @@ func (h *MinHeap) Peek() (int, error) {
 	return h.items[0], nil
 }
 
+// Value returns the contained data of the given node index.
 func (h *MinHeap) Value(i int) int {
 	return h.items[i]
 }
 
-// Insert places the given element at the bottom of the tree before calling Fix().
+// Insert places the given element at the bottom of the tree before re-heapifying.
 func (h *MinHeap) Insert(i int) {
 	h.items = append(h.items, i)
 	h.heapifyUp()
 }
 
-// ExtractMin removes the minimum element from the heap and rebalances the tree.
+// ExtractMin removes the minimum element from the heap before re-heapifying.
 func (h *MinHeap) ExtractMin() (int, error) {
 	if len(h.items) == 0 {
 		return 0, ErrHeapIsEmpty
@@ -64,7 +70,6 @@ func (h *MinHeap) ExtractMin() (int, error) {
 	// Move the last element to the root and shrink the heap.
 	h.items[0] = h.items[len(h.items)-1]
 	h.items = h.items[:len(h.items)-1]
-	// Re-heapify.
 	h.heapifyDown()
 	return v, nil
 }
