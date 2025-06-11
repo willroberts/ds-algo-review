@@ -22,6 +22,7 @@ func FNV1(data []byte) uint64 {
 // FNV1a implements the 1a version of the Fowler-Noll-Vo hash function.
 // FNV1a differs from FNV1 only byy the order in which the multiply and XOR is performed.
 // It offers better performance than FNV1, with a slightly higher chance of collision.
+// See https://softwareengineering.stackexchange.com/a/145633 for details.
 func FNV1a(data []byte) uint64 {
 	hash := FNV_OFFSET_BASIS
 	for _, b := range data {
