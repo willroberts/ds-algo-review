@@ -41,13 +41,3 @@ func (t *Trie) IsCompleteWord(s string) bool {
 	}
 	return true
 }
-
-func debugKeys(m map[rune]*TrieNode) []rune {
-	keys := make([]rune, len(m))
-	i := 0
-	for k := range m {
-		keys[i] = k
-		i++
-	}
-	return keys
-}
