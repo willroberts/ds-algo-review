@@ -101,10 +101,7 @@ func (h *MaxHeap) heapifyDown() {
 		return
 	}
 	i := 0
-	for {
-		if !h.HasLeftChild(i) {
-			break
-		}
+	for h.HasLeftChild(i) {
 		larger := h.GetLeftChild(i)
 		if h.HasRightChild(i) && h.items[h.GetRightChild(i)] > h.items[h.GetLeftChild(i)] {
 			larger = h.GetRightChild(i)

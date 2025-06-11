@@ -95,10 +95,7 @@ func (h *MinHeap) heapifyDown() {
 		return
 	}
 	i := 0
-	for {
-		if !h.HasLeftChild(i) {
-			break
-		}
+	for h.HasLeftChild(i) {
 		smaller := h.GetLeftChild(i)
 		if h.HasRightChild(i) && h.items[h.GetRightChild(i)] < h.items[h.GetLeftChild(i)] {
 			smaller = h.GetRightChild(i)
